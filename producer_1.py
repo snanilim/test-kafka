@@ -3,7 +3,7 @@ from time import sleep
 from json import dumps
 
 try:
-    producer = KafkaProducer(bootstrap_servers='localhost:9092',
+    producer = KafkaProducer(bootstrap_servers='192.168.7.72:9092',
                             value_serializer=lambda x: dumps(x).encode('utf-8'))
 except Exception as ex:
     print('Exception while connecting Kafka')
@@ -17,3 +17,4 @@ try:
 except Exception as ex:
     print('Exception while connecting Kafka')
     print(str(ex))
+
