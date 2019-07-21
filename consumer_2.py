@@ -16,4 +16,4 @@ consumer = KafkaConsumer(
 for message in consumer:
     message = message.value
     print(message)
-    sleep(10)
+    sleep(5)
