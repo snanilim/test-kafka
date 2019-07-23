@@ -4,8 +4,8 @@ from time import sleep
 
 
 consumer = KafkaConsumer(
-    'prTopic2',
-     bootstrap_servers=['192.168.7.73:9092'],
+    'prTopic3.3',
+     bootstrap_servers=['192.168.7.72:9092', '192.168.7.73:9092'],
     #  auto_offset_reset='earliest',
     #  enable_auto_commit=True,
      group_id='my-group',
@@ -16,4 +16,5 @@ consumer = KafkaConsumer(
 for message in consumer:
     message = message.value
     print(message)
-    sleep(5)
+    sleep(3)
+    
