@@ -43,15 +43,17 @@ def parseLog(filename):
                 src_dst_ip = src_dst_arr[0]
                 src_dst_port = src_add_arr[1]
 
-            info = {'date':totalDate, 'src_mac':src_mac_add, 'src_ip':src_add_ip, 'src_port':src_add_port, 'dst_ip':src_dst_ip, 'dst_port':src_dst_port}
-            
+            # info = {'date':totalDate, 'src_mac':src_mac_add, 'src_ip':src_add_ip, 'src_port':src_add_port, 'dst_ip':src_dst_ip, 'dst_port':src_dst_port}
+            info = totalDate, src_mac_add, src_add_ip, src_add_port, src_dst_ip, src_dst_port
+
+
             parse_arr.append(info)
             print(totalDate, src_mac_add, src_add_ip, src_add_port, src_dst_ip, src_dst_port)
             # return True
 
-        else:
-            return False
+        # else:
+        #     return False
 
-    print(parse_arr)
+    print('parse_arr', parse_arr)
     return parse_arr
             

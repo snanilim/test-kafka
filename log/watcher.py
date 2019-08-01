@@ -2,6 +2,7 @@ import time
 from watchdog.observers import Observer
 from watchdog.events import FileSystemEventHandler
 from log_parse import parseLog
+from insert_info import insert_data
 
 
 class Watcher:
@@ -34,7 +35,9 @@ class Handler(FileSystemEventHandler):
         elif event.event_type == 'created':
             # Take any action here when a file is first created.
             print("Received created event - %s." % event.src_path)
-            parseLog(event.src_path)
+            values = parseLog(event.src_path)
+            print('values', values)
+            insert_data(values)
 
 
 if __name__ == '__main__':
